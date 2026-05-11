@@ -7,6 +7,11 @@
 #SBATCH --cpus-per-task=4
 #SBATCH --partition short
 
+set -euo pipefail
+shopt -s nullglob
+
+module load conda/miniforge3/24.11.3-0
+source /n/app/conda/miniforge3/24.11.3-0/etc/profile.d/conda.sh
 conda activate crispritz
 launch_dir=$(pwd)
 source ~/.research_config
