@@ -3,7 +3,7 @@
 #SBATCH --output=logs/crispritz_%A_%a.out
 #SBATCH --error=logs/crispritz_%A_%a.err
 #SBATCH --time=4:00:00
-#SBATCH --mem=4G
+#SBATCH --mem=32G
 #SBATCH --cpus-per-task=4
 #SBATCH --partition short
 
