@@ -16,13 +16,20 @@ conda activate crisprde-venv
 
 # set fps
 source ~/.research_config
-fa_file="${REF_GENOME_DIR}hg38_main_chroms.fa"
-out_file="${REF_GENOME_DIR}hg38_N_runs_min10.bed"
+#fa_file="${REF_GENOME_DIR}hg38_main_chroms.fa"
+#out_file="${REF_GENOME_DIR}hg38_N_runs_min10.bed"
 
-seqkit locate --bed \
+fa_file=${REF_GENOME_DIR}"/chrY_separate_chroms/chrY.fa"
+out_file=${REF_GENOME_DIR}"/chrY_N_runs_min10.bed"
+
+seqkit locate \
+  --bed \
   --ignore-case \
   --only-positive-strand \
-  --use-regexp \
-  --pattern '"N{10,}"' \
-  --threads 6 \
-  "$fa_file" > "$out_file"
+  --pattern "NNNNNNNNNN" \
+  --threads "${SLURM_CPUS_PER_TASK:-6}" \
+  "$fa_file" \
+  | sort -k1,1 -k2,2n \
+  | bedtools merge -i - \
+  | awk 'BEGIN{OFS="\t"} {print $1, $2, $3, "N_run", 0, "+"}' \
+  > "$out_file"
