@@ -23,6 +23,7 @@ mkdir -p "$out_dir"
 
 # run RepeatMasker
 RepeatMasker \
+  -engine rmblast \
   -species human \
   -pa 1 \
   -gff \
