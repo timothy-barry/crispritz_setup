@@ -19,7 +19,7 @@ source ~/.research_config
 #fa_file="${REF_GENOME_DIR}hg38_main_chroms.fa"
 #out_file="${REF_GENOME_DIR}hg38_N_runs_min10.bed"
 
-fa_file=${REF_GENOME_DIR}"/chrY_separate_chroms/chrY.fa"
+fa_file=${REF_GENOME_DIR}"/hg38_separate_chroms/chrY.fa"
 out_file=${REF_GENOME_DIR}"/chrY_N_runs_min10.bed"
 
 seqkit locate \
