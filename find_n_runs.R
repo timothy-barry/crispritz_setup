@@ -7,6 +7,7 @@ fa <- readDNAStringSet(fa_file)
 con <- file(out_file, "w")
 
 for (chr in names(fa)) {
+  print(chr)
   x <- toupper(as.character(fa[[chr]]))
   hits <- gregexpr("N+", x)[[1]]
   if (hits[1] == -1) next
