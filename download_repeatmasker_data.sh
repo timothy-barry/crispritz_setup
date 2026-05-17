@@ -17,12 +17,12 @@ mkdir -p "$out_dir"
 cd "$out_dir"
 
 # download FamDB root partition and human-containing partition
-#base_url="https://www.dfam.org/releases/current/families/FamDB"
+base_url="https://www.dfam.org/releases/current/families/FamDB"
 
-#wget "${base_url}/dfam39_full.0.h5.gz"
-#wget "${base_url}/dfam39_full.0.h5.gz.md5"
-#wget "${base_url}/dfam39_full.7.h5.gz"
-#wget "${base_url}/dfam39_full.7.h5.gz.md5"
+wget "${base_url}/dfam39_full.0.h5.gz"
+wget "${base_url}/dfam39_full.0.h5.gz.md5"
+wget "${base_url}/dfam39_full.7.h5.gz"
+wget "${base_url}/dfam39_full.7.h5.gz.md5"
 
 md5sum -c dfam39_full.0.h5.gz.md5
 md5sum -c dfam39_full.7.h5.gz.md5

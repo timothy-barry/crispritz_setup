@@ -18,12 +18,14 @@ conda activate repeatmasker
 source ~/.research_config
 fa_file="${REF_GENOME_DIR}/chrY_separate_chroms/chrY.fa"
 out_dir="${REF_GENOME_DIR}/repeatmasker_chrY"
+lib_dir="${LOCAL_INTERNAL_SCRATCH_DIR}/repeatmasker_data"
 
 mkdir -p "$out_dir"
 
 # run RepeatMasker
 RepeatMasker \
   -engine rmblast \
+  -libdir "$lib_dir" \
   -species human \
   -pa 1 \
   -gff \
