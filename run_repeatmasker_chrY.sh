@@ -16,7 +16,7 @@ conda activate repeatmasker
 
 # set fps
 source ~/.research_config
-fa_file="${REF_GENOME_DIR}/chrY_separate_chroms/chrY.fa"
+fa_file="${REF_GENOME_DIR}/hg38_separate_chroms/chrY.fa"
 out_dir="${REF_GENOME_DIR}/repeatmasker_chrY"
 lib_dir="${LOCAL_INTERNAL_SCRATCH_DIR}/repeatmasker_data"
 
