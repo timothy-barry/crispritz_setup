@@ -19,8 +19,10 @@ source ~/.research_config
 fa_file="${REF_GENOME_DIR}/hg38_separate_chroms/chrY.fa"
 out_dir="${REF_GENOME_DIR}/repeatmasker_chrY"
 lib_dir="${LOCAL_INTERNAL_SCRATCH_DIR}/repeatmasker_data"
+work_dir="${LOCAL_INTERNAL_SCRATCH_DIR}/repeatmasker_chrY_work_${SLURM_JOB_ID:-manual}"
 
-mkdir -p "$out_dir"
+mkdir -p "$out_dir" "$work_dir"
+cd "$work_dir"
 
 # run RepeatMasker
 RepeatMasker \
