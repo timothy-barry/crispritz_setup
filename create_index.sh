@@ -24,8 +24,10 @@ cd $REF_GENOME_DIR
 #done
 
 # 2. create cas9 pam ref
-pam_file=$launch_dir"/cas9_pam_file.txt"
-crispritz.py index-genome crispritz_cas9_hg38 hg38_separate_chroms/ $pam_file -bMax 2 -th 4
+#pam_file=$launch_dir"/cas9_pam_file.txt"
+#crispritz.py index-genome crispritz_cas9_hg38 hg38_separate_chroms/ $pam_file -bMax 2 -th 4
 
-# 3. change name of genome_library
-mv genome_library crispritz_genomes
+# 3. create SpRY Cas9 PAM ref
+spry_pam_file=$launch_dir"/spry_cas9_pam_file.txt"
+crispritz.py index-genome crispritz_spry_hg38 hg38_separate_chroms/ $spry_pam_file -bMax 2 -th 4
+
